@@ -4,7 +4,7 @@ SweepSensor sweep;
 
 void setup()
 {
-  size(500, 500, FX2D);
+  size(600, 300, FX2D);
 
   sweep = new SweepSensor(this);
   sweep.start("/dev/tty.usbserial-DO004HM4");
