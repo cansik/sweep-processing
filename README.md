@@ -1,4 +1,4 @@
-# Sweep for Processing [![Build Status](https://travis-ci.org/cansik/sweep-processing.svg?branch=master)](https://travis-ci.org/cansik/sweep-processing) [![Build status](https://ci.appveyor.com/api/projects/status/2w9xm1dbafbi7xc0?svg=true)](https://ci.appveyor.com/project/cansik/sweep-processing)
+# Sweep for Processing [![Build Status](https://travis-ci.org/cansik/sweep-processing.svg?branch=master)](https://travis-ci.org/cansik/sweep-processing) [![Build status](https://ci.appveyor.com/api/projects/status/2w9xm1dbafbi7xc0?svg=true)](https://ci.appveyor.com/project/cansik/sweep-processing) [![codebeat badge](https://codebeat.co/badges/3d8634b7-84eb-410c-b92b-24bf6875d8ef)](https://codebeat.co/projects/github-com-cansik-sweep-processing-master)
 Use the scanse sweep lidar with processing.
 
 ## Introduction
