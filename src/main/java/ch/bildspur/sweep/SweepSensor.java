@@ -35,6 +35,14 @@ public class SweepSensor implements PConstants {
     /**
      * Start the sensor and listen on a specific port.
      * @param port COM Port to listen on.
+     */
+    public void start(String port) {
+      this.start(port, 5, 500);
+    }
+
+    /**
+     * Start the sensor and listen on a specific port, rotation speed and sample rate.
+     * @param port COM Port to listen on.
      * @param speed rotation speed of the sweep sensor.
      * @param sampleRate sample rate of the sweep sensor.
      */
