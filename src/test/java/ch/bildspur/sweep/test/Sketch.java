@@ -26,12 +26,12 @@ public class Sketch extends PApplet {
         frameRate(FRAME_RATE);
 
         sweep = new SweepSensor(this);
-        sweep.start("/dev/tty.usbserial-DO004HM4", 5, 500);
+        sweep.startAsync("/dev/tty.usbserial-DO004HM4", 5, 500);
     }
 
     public void draw() {
         // clear screen
-        background(0);
+        background(55);
 
         pushMatrix();
         translate(width / 2, height / 2);
@@ -39,7 +39,7 @@ public class Sketch extends PApplet {
         {
             pushMatrix();
             translate(sample.getLocation().x, sample.getLocation().y);
-            fill(255);
+            fill(255, 0, 255 - sample.getSignalStrength());
             noStroke();
             ellipse(0, 0, 10, 10);
             popMatrix();
