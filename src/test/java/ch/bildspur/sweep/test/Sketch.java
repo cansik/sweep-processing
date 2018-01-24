@@ -26,7 +26,7 @@ public class Sketch extends PApplet {
         frameRate(FRAME_RATE);
 
         sweep = new SweepSensor(this);
-        sweep.start("/dev/tty.usbserial-DO004HM4");
+        sweep.start("/dev/tty.usbserial-DO004HM4", 5, 500);
     }
 
     public void draw() {

@@ -35,38 +35,43 @@ public class SweepSensor implements PConstants {
     /**
      * Start the sensor and listen on a specific port.
      * @param port COM Port to listen on.
+     * @param speed rotation speed of the sweep sensor.
+     * @param sampleRate sample rate of the sweep sensor.
      */
-    public void start(String port)
-    {
-        if(isRunning)
-            return;
+     public void start(String port, int speed, int sampleRate)
+     {
+         if(isRunning)
+             return;
 
-        device = new SweepDevice(port);
+         device = new SweepDevice(port);
 
-        PApplet.println("Sweep: waiting for motors...");
-        while (!device.isMotorReady()) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+         device.setMotorSpeed(speed);
+         device.setSampleRate(sampleRate);
 
-        PApplet.println("Sweep: running!");
+         PApplet.println("Sweep: waiting for motors...");
+         while (!device.isMotorReady()) {
+             try {
+                 Thread.sleep(100);
+             } catch (InterruptedException e) {
+                 e.printStackTrace();
+             }
+         }
 
-        // start device
-        device.startScanning();
+         PApplet.println("Sweep: running!");
 
-        // create update thread
-        sweepThread = new Thread(() -> {
-            while(isRunning)
-                updateScans();
-        });
+         // start device
+         device.startScanning();
 
-        // start update thread
-        isRunning = true;
-        sweepThread.start();
-    }
+         // create update thread
+         sweepThread = new Thread(() -> {
+             while(isRunning)
+                 updateScans();
+         });
+
+         // start update thread
+         isRunning = true;
+         sweepThread.start();
+     }
 
     /**
      * Stop the sensor.
