@@ -47,7 +47,7 @@ It is recommended to save the reference to the list of samples in a own variable
 
 *Based on [BasicExample](examples/BasicExample/BasicExample.pde)*
 
-### Asynchronous
+### Asynchronous
 With version `0.3` it is possible to start the device asynchronous and set the set the **motor speed** and **sample rate** through the constructor (thanks to [@felixerdy](https://github.com/felixerdy)).
 
 
